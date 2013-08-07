@@ -1,0 +1,53 @@
+
+/* - Init -----------------------------------------------> */
+
+@import 'init.less';
+@import '../gridpak/gridpak.less';
+@import '../lll/3L-maxi.less';
+
+
+
+/* - Styles ---------------------------------------------> */
+
+html{font-size: 62.5%;}  //font-size: 18px; font-size: 1.8rem;
+
+body{
+	// Titillium Web, Open Sans
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+
+.container{
+	position: relative;
+	margin: 0 auto;
+	width: 980px;
+}
+@media only screen and (max-width : 979px) {
+	.container{
+		width: 100%;
+	}
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width: 479px) {}
+@media screen and (min-width: 480px) and (max-width: 479px) {}
+@media screen and (min-width: 780px) and (max-width: 979px) {}
+@media only screen and (min-width : 980px) {}
+
+
+
+/* -- Classes -------------------------------------------> */
+
+.hidden { display: none; visibility: hidden; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+/* -- Medias --------------------------------------------> */
+
+@import url('print.less');
