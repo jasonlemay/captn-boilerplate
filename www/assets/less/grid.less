@@ -11,6 +11,25 @@
  * Adapted version by @jasonlemay
  */
 
+
+ // -- Media Queries Mixins --------------------------------
+
+@screen-mobile-min:     0px;
+@screen-mobile-max:     649px;
+@screen-tablet-min:     650px;
+@screen-tablet-max:     959px;
+@screen-desktop-min:    960px;
+
+@mobile:                ~'max-width: @{screen-mobile-max}';
+
+@tablet:                ~'max-width: @{screen-tablet-max}';
+@tablet-only:           ~'min-width: @{screen-tablet-min}) and (max-width: @{screen-tablet-max}';
+
+@desktop:               ~'min-width: @{screen-desktop-min}';
+
+
+// -- Grid system ------------------------------------------
+
 .mixin-col {
      border:0px solid rgba(0,0,0,0);
      float:left;

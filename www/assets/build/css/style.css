@@ -4,9 +4,9 @@
  * Pages and custom elements style goes here
  * 
  * Using
- * - reset.less 		reset stylesheet, based on HTML 5 Boilerplate
- * - grid.less 			grid system, based on gridpak
- * - variables.less 	variables for colorscheme, media queries, etc
+ * - reset.less 		reset stylesheet
+ * - grid.less 			grid system, including mixins
+ * - colors.less 		variables for colorscheme
  * - layout.less 		default style layout for your website
  * - components.less 	styles and mixins for buttons, form, etc
  *
@@ -589,8 +589,8 @@ h6 {
   }
 }
 /**
- * VARIABLES
- * Color scheme, media queries, ...
+ * COLORS
+ * Color scheme, ...
  * Created by @jasonlemay
  */
 /**
