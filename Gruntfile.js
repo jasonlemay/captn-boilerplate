@@ -7,16 +7,16 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     //'js/libs/*.js',
-                    'assets/js/global.js'
+                    'www/assets/js/global.js'
                 ],
-                dest: 'assets/build/js/global.js',
+                dest: 'www/assets/build/js/global.js',
             }
         },
 
         uglify: {
             build: {
-                src: 'assets/build/js/global.js',
-                dest: 'assets/build/js/global.min.js'
+                src: 'www/assets/build/js/global.js',
+                dest: 'www/assets/build/js/global.min.js'
             }
         },
 
@@ -24,9 +24,9 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/img/',
+                    cwd: 'www/assets/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'assets/build/img/'
+                    dest: 'www/assets/build/img/'
                 }]
             }
         },
@@ -34,20 +34,20 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["assets/less"],
+                    paths: ["www/assets/less"],
                     cleancss: false
                 },
                 files: {
-                    "assets/build/css/style.css": "assets/less/style.less"
+                    "www/assets/build/css/style.css": "www/assets/less/style.less"
                 }
             },
             production: {
                 options: {
-                    paths: ["assets/less"],
+                    paths: ["www/assets/less"],
                     cleancss: true
                 },
                 files: {
-                    "assets/build/css/style.min.css": "assets/less/style.less"
+                    "www/assets/build/css/style.min.css": "www/assets/less/style.less"
                 }
             }
         },
@@ -57,15 +57,22 @@ module.exports = function(grunt) {
                 livereload: true,
             },
             scripts: {
-                files: ['assets/js/*.js'],
+                files: ['www/assets/js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
                 },
             },
             css: {
-                files: ['assets/less/*.less'],
+                files: ['www/assets/less/*.less'],
                 tasks: ['less'],
+                options: {
+                    spawn: false,
+                }
+            },
+            images: {
+                files: ['www/assets/img/**/*.{png,jpg,gif}'],
+                tasks: ['imagemin'],
                 options: {
                     spawn: false,
                 }
@@ -80,6 +87,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'less']);
+    grunt.registerTask('default', 'watch');
+    grunt.registerTask('imgs', 'imagemin');
 
 };
