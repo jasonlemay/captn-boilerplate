@@ -689,6 +689,106 @@ form p input {
 form p input.full {
   width: 100%;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------
+
+  - Gradient background
+  - Drop shadow
+  - Inner shadow
+  - Box shadow
+  - Rounded
+  - Border radius
+  - Opacity
+  - Transition
+  - Transition duration
+  - Rotation
+  - Scale
+  - Translate
+  - Box sizing
+
+ */
+/* - Gradient background
+ *
+ * First color is the background color to use for browsers 
+ * that don't support gradients. The second two colors are 
+ * the start and stop colors, going from bottom to top. 
+ */
+/* - Drop shadow
+ *
+ * Adds a box-shadow that is a semi-transparent black. The 
+ * first two values control the x and y axis position, the 
+ * third controls blur (how big the shadow is), and the final 
+ * value is the opacity (0 is fully transparent, 1 is opaque).
+ */
+/* - Inner shadow
+ *
+ * Sets the inner shadow. The first two numbers are the x and y
+ * coordinates, the third is the blur and the last one is the 
+ * strength of the shadow.
+ */
+/* - Box shadow
+ *
+ * Sets the box-shadow. The first two numbers are the x and y 
+ * coordinates, then the blur, and the color. This is different 
+ * from drop-shadow in that it takes on a color instead of setting 
+ * a transparent black shadow. Additionally, this mixin takes on 
+ * the whole set of arguments in one go, so no need for commas 
+ * between each number, and you can also add "inset" before the 
+ * first number for inset shadow.
+ */
+/* - Rounded
+ *
+ * Sets a border-radius for all 4 corners. If you want to set 
+ * border-radius for individual corners use: .border-radius
+ */
+/* - Border radius
+ *
+ * Sets a border-radius for each of the 4 corners individually. 
+ * The values go in a clockwise rotation: top right, bottom right, 
+ * bottom left, top left.
+ */
+/* - Opacity
+ *
+ * Sets the opacity. 0 is fully transparent, 1 is opaque.
+ */
+/* - Transition
+ *
+ * Sets the transition duration and effect to use for any 
+ * transitions (e.g. hover effects), unlike transition-duration 
+ * which only sets the duration.
+ */
+/* - Transition duration
+ *
+ * Sets a transition-duration (time it takes to do things like 
+ * hover effects). The value provides a time in seconds.
+ */
+/* - Transform
+ */
+/* - Rotation
+ *
+ * Rotates the item by a number of degrees clockwise.
+ */
+/* - Scale
+ *
+ * Scales the item by the ratio provided. The example makes the 
+ * item 2 times larger.
+ */
+/* - Translate
+ *
+ * Translates an element using the given coordinates. The values 
+ * are x and y offset coordinates, so the above example moves the
+ * element right 10 pixels and up 20 pixels.
+ */
+/* - Boox sizing
+ *
+ * Allows you to alter the CSS box model. For example, by setting 
+ * this to 'border-box' the width and height properties will 
+ * include the padding and border values.
+ */
 @media print {
   * {
     background: transparent !important;
