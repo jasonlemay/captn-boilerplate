@@ -8,7 +8,6 @@
   - Gradient background
   - Drop shadow
   - Inner shadow
-  - Box shadow
   - Rounded
   - Border radius
   - Opacity
@@ -74,14 +73,6 @@
 }
 
 /* - Box shadow
- *
- * Sets the box-shadow. The first two numbers are the x and y 
- * coordinates, then the blur, and the color. This is different 
- * from drop-shadow in that it takes on a color instead of setting 
- * a transparent black shadow. Additionally, this mixin takes on 
- * the whole set of arguments in one go, so no need for commas 
- * between each number, and you can also add "inset" before the 
- * first number for inset shadow.
  */
 
 .box-shadow(@arguments) {
@@ -219,4 +210,13 @@
   -moz-box-sizing: @sizing;
   -webkit-box-sizing: @sizing;
   box-sizing: @sizing;
+}
+
+/* - Background clip
+ */
+
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
 }

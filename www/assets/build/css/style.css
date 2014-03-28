@@ -638,6 +638,9 @@ h3 {
   font-size: 1.8rem;
   margin: 0.1em 0 0.9em;
 }
+h3 em {
+  font-size: 80%;
+}
 p {
   line-height: 1.7em;
   margin-bottom: 0.8em;
@@ -699,7 +702,6 @@ form p input.full {
   - Gradient background
   - Drop shadow
   - Inner shadow
-  - Box shadow
   - Rounded
   - Border radius
   - Opacity
@@ -731,14 +733,6 @@ form p input.full {
  * strength of the shadow.
  */
 /* - Box shadow
- *
- * Sets the box-shadow. The first two numbers are the x and y 
- * coordinates, then the blur, and the color. This is different 
- * from drop-shadow in that it takes on a color instead of setting 
- * a transparent black shadow. Additionally, this mixin takes on 
- * the whole set of arguments in one go, so no need for commas 
- * between each number, and you can also add "inset" before the 
- * first number for inset shadow.
  */
 /* - Rounded
  *
@@ -789,6 +783,130 @@ form p input.full {
  * this to 'border-box' the width and height properties will 
  * include the padding and border values.
  */
+/* - Background clip
+ */
+.test-gradient {
+  background: #1a9cd9;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #6cc4ed), color-stop(1, #0f5b7e));
+  background: -ms-linear-gradient(bottom, #6cc4ed, #0f5b7e);
+  background: -moz-linear-gradient(center bottom, #6cc4ed 0%, #0f5b7e 100%);
+  background: -o-linear-gradient(#0f5b7e, #6cc4ed);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0f5b7e', endColorstr='#6cc4ed', GradientType=0);
+  width: 100%;
+  height: 50px;
+}
+.test-dropshadow {
+  -webkit-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-innershadow {
+  -webkit-box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.4);
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-rounded {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-borderradius {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 20px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-opacity {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-opacity:hover {
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  -webkit-opacity: 0.6;
+  opacity: 0.6;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+  filter: alpha(opacity=60);
+}
+.test-rotation {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-rotation:hover {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.test-scale {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-scale:hover {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.test-translate {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #1a9cd9;
+  width: 100%;
+  height: 50px;
+}
+.test-translate:hover {
+  -webkit-transform: translate(10px, 5px);
+  -moz-transform: translate(10px, 5px);
+  -o-transform: translate(10px, 5px);
+  -ms-transform: translate(10px, 5px);
+  transform: translate(10px, 5px);
+}
+.col-1_6 {
+  margin-bottom: 15px;
+}
 @media print {
   * {
     background: transparent !important;
