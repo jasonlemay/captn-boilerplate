@@ -1,3 +1,12 @@
+# ##############################################################################
+# # HIDE .PHP EXTENSIONS                                                       #
+# ##############################################################################
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
 # Based on https://github.com/h5bp/html5-boilerplate/blob/v4/.htaccess
 
 # ##############################################################################
